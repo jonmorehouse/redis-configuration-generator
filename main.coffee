@@ -33,9 +33,12 @@ createInstance = (db, env, object) ->
 
 		else
 
-			# console.log "#{instanceName} = #{object.bind}:#{object.port}"
+			console.log "#{instanceName} = #{object.bind}:#{object.port}"
 
 	# now we need to create		
+		
+		
+
 
 # create a redis instance and proper configuration for each element that we have in the config etc
 createInstance(db, dbEnv, dbEnvObject) for own dbEnv, dbEnvObject of config.redis[db] for own db, dbObject of config.redis
