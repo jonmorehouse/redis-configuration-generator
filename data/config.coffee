@@ -9,25 +9,35 @@ module.exports =
 	redis:
 		caching:
 			development:
-				host: "localhost:6380"
+				port: "6380"
+				bind: "127.0.0.1"
+
 			test:
-				host: "localhost:6381"
+				port: "6381"
+				bind: "127.0.0.1"
 			production:
-				host: "localhost:6382"
+				port:"6382"
+				bind: "127.0.0.1"
 
 		feed:
 			development: 
-				host: "localhost:6383"
+				port:"6383"
+				bind: "127.0.0.1"
 			test:
-				host: "localhost:6384"
+				port:"6384"
+				bind: "127.0.0.1"
 			production:	
-				host: "localhost:6385"
+				port:"6385"
+				bind: "127.0.0.1"
 
 		trending:
 			development:
-				host: "localhost:6386"
+				port:"6386"
+				bind: "127.0.0.1"
 			test:
-				host: "localhost:6387"
+				port:"6387"
+				bind: "127.0.0.1"
 			production:
-				host: "localhost:6388"
+				port:"6388"
+				bind: "127.0.0.1"
 				
