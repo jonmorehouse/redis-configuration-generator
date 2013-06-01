@@ -27,7 +27,7 @@ createPlist = (name, file) ->
 	# now save the file etc
 	fs.writeFile "plists/#{name}.plist", plistString, 'utf-8', (err) ->
 
-		console.log err
+		console.log err if err
 
 
 # create a redis instance via setting up our configuration 
@@ -51,24 +51,17 @@ createInstance = (db, env, object) ->
 	confContents = ""
 	confContents += "#{key} #{_object}\n" for own key, _object of currentConf
 
-	return createPlist instanceName, "#{defaults.confsDir}/#{confFile}"
-
 	# write the file to the proper directory
 	fs.writeFile "confs/#{confFile}", confContents, 'utf-8', (err) ->		
 
-		if err
+		console.log err if err
 
-			console.log err
+	# initialize plist etc
+	createPlist instanceName, "#{defaults.confsDir}/#{confFile}"
 
-		else
-
-			console.log "#{instanceName} = #{object.bind}:#{object.port}"
-
-	# now we need to create		
-			
-
-# create a redis instance and proper configuration for each element that we have in the config etc
+# run file 
 createInstance(db, dbEnv, dbEnvObject) for own dbEnv, dbEnvObject of config.redis[db] for own db, dbObject of config.redis
 
-# module.exports = ->
+
+
 
