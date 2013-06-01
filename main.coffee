@@ -25,7 +25,7 @@ createPlist = (name, file) ->
 	plistString = plist.build(current).toString()
 
 	# now save the file etc
-	fs.writeFile "plists/#{name}.plist", plistString, 'utf-8', (err) ->
+	fs.writeFile "plists/homebrew.redis.#{name}.plist", plistString, 'utf-8', (err) ->
 
 		console.log err if err
 
@@ -45,7 +45,7 @@ createInstance = (db, env, object) ->
 		port: object.port
 		bind: object.bind
 		dbfilename: "dump-#{instanceName}.rbd"
-		"vm-swap-file": "/tmp/redis-#{instanceName}.swap"
+		# "vm-swap-file": "/tmp/redis-#{instanceName}.swap"
 
 	# create our conf contents properly to save the file
 	confContents = ""
