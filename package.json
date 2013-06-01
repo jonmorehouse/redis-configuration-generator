@@ -1,0 +1,25 @@
+{
+  "name": "redis.conf",
+  "version": "0.0.0",
+  "description": "Redis configuration helper tool",
+  "main": "main.coffee",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/MorehouseJ09/redis.conf.git"
+  },
+  "keywords": [
+    "redis",
+    "jumper",
+    "api",
+    "conf"
+  ],
+  "author": "Jon Morehouse",
+  "license": "BSD",
+  "gitHead": "8d4ea3c44f3a37060c19612d70639f13cd00e18e",
+  "readmeFilename": "readme.md",
+  "dependencies": {
+    "ect": "~0.5.2",
+    "plist": "~0.4.3"
+  }
+}
