@@ -2,6 +2,8 @@ config = require "./data/config"
 defaults = require "./data/defaults"
 do require "helpers"
 fs = require "fs"
+defaults.confsDir = "/usr/local/etc"
+
 
 # create a redis instance via setting up our configuration 
 createInstance = (db, env, object) ->
@@ -12,7 +14,7 @@ createInstance = (db, env, object) ->
 
 	# lets create a clone element here so that we can clone different objects
 	currentConf = 
-		include: "/usr/local/etc/redis-common.conf"
+		include: "#{defaults.confsDir}/redis-common.conf"
 		pidfile: "/usr/local/var/run/redis-#{instanceName}.pid"
 		# unixsocket: "/tmp/redis-#{instanceName}.sock"
 		port: object.port
@@ -22,7 +24,7 @@ createInstance = (db, env, object) ->
 
 	# create our conf contents properly to save the file
 	confContents = ""
-	confContents += "#{key} #{object}\n" for own key, object of currentConf
+	confContents += "#{key} #{_object}\n" for own key, _object of currentConf
 
 	# write the file to the proper directory
 	fs.writeFile "confs/#{confFile}", confContents, 'utf-8', (err) ->		
