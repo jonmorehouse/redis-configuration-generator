@@ -1,6 +1,4 @@
 # include my custom helpers
-# do require "helpers"
-
 # initialize filesystem
 fs = require "fs"
 plist = require "plist"
@@ -15,12 +13,21 @@ defaults.plist = plist.parseFileSync defaults.defaultPlist
 # create the proper plist for each element
 createPlist = (name, file) ->
 
-	# set up our current plist with the proper elements
-	# current = defaults.plist.clone()
-	# current.ProgramArguments[1] = file
-	# current.Label = name
+	# clone the object
+	current = defaults.plist.constructor()
+	current[key] = value for own key, value of defaults.plist
 
-	# console.log plist.build({name: "Jon"}).toString()
+	# set up our current plist with the proper elements
+	current.ProgramArguments[1] = file
+	current.Label = name
+
+	# create the proper plist string from the necessary elements etc
+	plistString = plist.build(current).toString()
+
+	# now save the file etc
+	fs.writeFile "plists/#{name}.plist", plistString, 'utf-8', (err) ->
+
+		console.log err
 
 
 # create a redis instance via setting up our configuration 

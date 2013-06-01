@@ -20,7 +20,6 @@
   "readmeFilename": "readme.md",
   "dependencies": {
     "ect": "~0.5.2",
-    "plist": "~0.4.3",
-    "helpers": "git://github.com/MorehouseJ09/coffee_helpers.git"
+    "plist": "~0.4.3"
   }
 }
