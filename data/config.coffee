@@ -7,38 +7,27 @@ module.exports =
 			confDir: "/usr/local/etc/"
 			confPermissions: "622"
 	redis:
-		# caching db 
 		caching:
 			development:
-				bind: "127.0.0.1"
-				port: 6380
+				host: "localhost:6380"
 			test:
-				bind: "127.0.0.1"
-				port: 6380
+				host: "localhost:6381"
 			production:
-				bind: "127.0.0.1"
-				port: 6380
+				host: "localhost:6382"
 
-		# redis feed functionality
 		feed:
 			development: 
-				bind: "127.0.0.1"
-				port: 6380
+				host: "localhost:6383"
 			test:
-				bind: "127.0.0.1"
-				port: 6380
+				host: "localhost:6384"
 			production:	
-				bind: "127.0.0.1"
-				port: 6380
+				host: "localhost:6385"
 
-		# trending element here
 		trending:
 			development:
-				bind: "127.0.0.1"
-				port: 6380
+				host: "localhost:6386"
 			test:
-				bind: "127.0.0.1"
-				port: 6380
+				host: "localhost:6387"
 			production:
-				bind: "127.0.0.1"
-				port: 6380
+				host: "localhost:6388"
+				
