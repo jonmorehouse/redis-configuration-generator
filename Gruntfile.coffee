@@ -1,3 +1,8 @@
+###
+	@note grunt build -- build files
+	@note grunt copy
+
+###
 module.exports = (grunt) ->
 
 	# initialize grunt configuration for cleaning the files
@@ -24,7 +29,6 @@ module.exports = (grunt) ->
 	# initialize npm tasks etc
 	grunt.loadNpmTasks "grunt-contrib-clean"
 	grunt.loadNpmTasks "grunt-contrib-copy"
-	# grunt.loadNpmTasks "grunt-shell"
 
 
 	# register my own custom build task

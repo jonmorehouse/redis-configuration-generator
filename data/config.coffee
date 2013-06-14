@@ -41,3 +41,14 @@ module.exports =
 				port:"6388"
 				bind: "127.0.0.1"
 				
+		facebook:		
+			development:
+				port: "6389"
+				bind: "127.0.0.1"
+			test:
+				port: "6390"
+				bind: "127.0.0.1"
+			production:
+				port: "6391"
+				bind: "127.0.0.1"
+			
